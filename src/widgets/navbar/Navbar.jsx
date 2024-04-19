@@ -43,18 +43,13 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to={"/add"}>
-            <Button style={{ color: "white" }}>добавить фильм</Button>
-          </NavLink>
-        </li>
-        <li>
           <NavLink to={"/films"}>
-            <Button style={{ color: "white" }}>фильмы</Button>
+            <Button>фильмы</Button>
           </NavLink>
         </li>
         <li>
           <NavLink to={"/serials"}>
-            <Button style={{ color: "white" }}>сериалы</Button>
+            <Button>сериалы</Button>
           </NavLink>
         </li>
       </ul>
@@ -76,13 +71,20 @@ const Navbar = () => {
       </div>
       {open && (
         <div onClick={() => setOpen(!open)} className={styles.navbar}>
+          {currentUser && currentUser == "adminadmin@mail.com" ? (
+            <NavLink to={"/add"}>добавить фильм</NavLink>
+          ) : (
+            ""
+          )}
           {currentUser ? "" : <NavLink to={"/register"}>Регистрация</NavLink>}
           {currentUser ? "" : <NavLink to={"/login"}>Вход</NavLink>}
 
           {!currentUser ? (
             ""
           ) : (
-            <span onClick={() => dispatch(logout())}>Выйти</span>
+            <span onClick={() => dispatch(logout())}>
+              <NavLink to={"/"}>Выйти</NavLink>
+            </span>
           )}
         </div>
       )}
