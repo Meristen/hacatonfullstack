@@ -1,5 +1,7 @@
 .contCard {
   border: 1px solid black;
+  width: 50%;
+  height: 500px;
   border-radius: 10px;
   margin-top: 20px;
   padding: 20px;
@@ -7,12 +9,9 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  min-width: 300px;
-  margin: 20px;
 }
 .cardImg {
   width: 300px;
   height: 300px;
+  border-radius: 20px;
 }
