@@ -11,18 +11,19 @@ const Input = ({
   style,
 }) => {
   return (
-    <div className={styles.inputbox}>
-      <input
-        style={style}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        name={name}
-        type={type}
-        required="required"
-      />
-      <span>{children}</span>
-      <i></i>
+    <div className={styles.boxInput}>
+      <div className={styles.border}>
+        <input
+          style={style}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          name={name}
+          type={type}
+          required="required"
+          className={styles.input}
+        />
+      </div>
     </div>
   );
 };

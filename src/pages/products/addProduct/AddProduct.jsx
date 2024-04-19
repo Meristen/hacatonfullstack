@@ -69,45 +69,47 @@ const AddProduct = () => {
   const { error } = useSelector((state) => state.products);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2 style={{ fontSize: "50px", fontFamily: "cursive" }}>AddProduct</h2>
-      {error && <h2 style={{ color: "red" }}>{error}!!!</h2>}
-      <Input
-        onChange={handleChange}
-        value={product.title}
-        name="title"
-        placeholder="title"
-        type="text"
-      />
-      <Input
-        onChange={handleChange}
-        value={product.description}
-        name="description"
-        placeholder="description"
-        type="text"
-      />
-      <Input
-        onChange={handleChange}
-        value={product.price}
-        name="price"
-        placeholder="price"
-        type="text"
-      />
-      <select onChange={handleChange} name="category" id="">
-        {categories.map((cat) => (
-          <option value={cat.id} key={cat.id}>
-            {cat.title}
-          </option>
-        ))}
-      </select>
-      <input
-        onChange={handleChange}
-        name="image"
-        accept="image/*"
-        type="file"
-      />
-      <Button color="green">Add</Button>
-    </form>
+    <div className="formWraper">
+      <form onSubmit={handleSubmit}>
+        <h2>Добавить фильм</h2>
+        {error && <h2 style={{ color: "red" }}>{error}!!!</h2>}
+        <Input
+          onChange={handleChange}
+          value={product.title}
+          name="title"
+          placeholder="Название"
+          type="text"
+        />
+        <Input
+          onChange={handleChange}
+          value={product.description}
+          name="description"
+          placeholder="Описание"
+          type="text"
+        />
+        <Input
+          onChange={handleChange}
+          value={product.price}
+          name="price"
+          placeholder="Категория"
+          type="text"
+        />
+        <select onChange={handleChange} name="category" id="">
+          {categories.map((cat) => (
+            <option value={cat.id} key={cat.id}>
+              {cat.title}
+            </option>
+          ))}
+        </select>
+        <input
+          onChange={handleChange}
+          name="image"
+          accept="image/*"
+          type="file"
+        />
+        <Button>Добавить</Button>
+      </form>
+    </div>
   );
 };
 
