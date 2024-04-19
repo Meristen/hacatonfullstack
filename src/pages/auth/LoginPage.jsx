@@ -32,27 +32,27 @@ const LoginPage = () => {
   }
   const { error } = useSelector((state) => state.users);
   return (
-    <form onSubmit={handleSubmit}>
-      <h2 style={{ fontSize: "50px", fontFamily: "cursive" }}>Login form</h2>
-      {error && <h2 style={{ color: "red" }}>{error}!!!</h2>}
-      <Input
-        onChange={handleChange}
-        value={registerObj.email}
-        name="email"
-        placeholder="Email"
-        type="email"
-      />
-      <Input
-        onChange={handleChange}
-        value={registerObj.password}
-        name="password"
-        placeholder="Password"
-        type="password"
-      />
-      <Button style={{ width: "200px", borderRadius: "30px" }} color="blue">
-        Login
-      </Button>
-    </form>
+    <div className="formWraper">
+      <form onSubmit={handleSubmit}>
+        <h2>Войти</h2>
+        {error && <h4 style={{ color: "red" }}>{error}!!!</h4>}
+        <Input
+          onChange={handleChange}
+          value={registerObj.email}
+          name="email"
+          placeholder="Email"
+          type="email"
+        />
+        <Input
+          onChange={handleChange}
+          value={registerObj.password}
+          name="password"
+          placeholder="Password"
+          type="password"
+        />
+        <Button>Войти</Button>
+      </form>
+    </div>
   );
 };
 

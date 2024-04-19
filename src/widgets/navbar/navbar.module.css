@@ -13,24 +13,24 @@
   margin: 20px;
   width: 50px;
   height: 50px;
+  cursor: pointer;
 }
 
 .navs {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .navbar {
-  border: 1px solid rgb(169, 21, 21);
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 70px;
-  right: 50px;
+  top: 100px;
+  right: 0px;
   z-index: 1;
-  padding: 20px;
-  background-color: white;
+  padding: 5px;
+  background-color: #0b0909;
 }
 .navbar a,
 .navbar span {

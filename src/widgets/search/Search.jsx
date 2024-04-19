@@ -34,7 +34,7 @@ const Search = () => {
         onChange={(e) => setValue(e.target.value)}
         className={styles.input}
         type="search"
-        placeholder="Search"
+        placeholder="Поиск"
       />
     </div>
   );

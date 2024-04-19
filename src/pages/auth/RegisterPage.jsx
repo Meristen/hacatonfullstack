@@ -34,32 +34,34 @@ const RegisterPage = () => {
   const { error } = useSelector((state) => state.users);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2 style={{ fontSize: "50px", fontFamily: "cursive" }}>Register form</h2>
-      {error && <h2 style={{ color: "red" }}>{error}!!!</h2>}
-      <Input
-        onChange={handleChange}
-        value={registerObj.email}
-        name="email"
-        placeholder="Email"
-        type="email"
-      />
-      <Input
-        onChange={handleChange}
-        value={registerObj.password}
-        name="password"
-        placeholder="Password"
-        type="password"
-      />
-      <Input
-        onChange={handleChange}
-        value={registerObj.password_confirm}
-        name="password_confirm"
-        placeholder="Password confirm"
-        type="password"
-      />
-      <Button color="blue">Register</Button>
-    </form>
+    <div className="formWraper">
+      <form onSubmit={handleSubmit}>
+        <h2>Регистрация</h2>
+        {error && <h2 style={{ color: "red" }}>{error}!!!</h2>}
+        <Input
+          onChange={handleChange}
+          value={registerObj.email}
+          name="email"
+          placeholder="Email"
+          type="email"
+        />
+        <Input
+          onChange={handleChange}
+          value={registerObj.password}
+          name="password"
+          placeholder="Password"
+          type="password"
+        />
+        <Input
+          onChange={handleChange}
+          value={registerObj.password_confirm}
+          name="password_confirm"
+          placeholder="Password confirm"
+          type="password"
+        />
+        <Button color="blue">Подтвердить</Button>
+      </form>
+    </div>
   );
 };
 

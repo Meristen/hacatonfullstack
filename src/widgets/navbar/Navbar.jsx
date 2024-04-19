@@ -48,31 +48,42 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to={"/add"}>
+          <NavLink to={"/films"}>
             <Button style={{ color: "white" }}>фильмы</Button>
           </NavLink>
         </li>
         <li>
-          <NavLink to={"/add"}>
+          <NavLink to={"/serials"}>
             <Button style={{ color: "white" }}>сериалы</Button>
           </NavLink>
         </li>
       </ul>
       <Search />
       <div className={styles.navUser}>
-        <p>{currentUser}</p>
+        {currentUser ? (
+          <Button>
+            <p>{currentUser}</p>
+          </Button>
+        ) : (
+          ""
+        )}
         <img
           onClick={toggle}
           className={styles.avatar}
-          src="https://cdn-icons-png.flaticon.com/512/147/147144.png"
+          src="https://img.freepik.com/vector-premium/vector-texto-estilo-letreros-neon-noche-pelicula_118419-3581.jpg?w=2000"
           alt="avatar"
         />
       </div>
       {open && (
         <div onClick={() => setOpen(!open)} className={styles.navbar}>
-          <NavLink to={"/register"}>Register</NavLink>
-          <NavLink to={"/login"}>Login</NavLink>
-          <span onClick={() => dispatch(logout())}>Logout</span>
+          {currentUser ? "" : <NavLink to={"/register"}>Регистрация</NavLink>}
+          {currentUser ? "" : <NavLink to={"/login"}>Вход</NavLink>}
+
+          {!currentUser ? (
+            ""
+          ) : (
+            <span onClick={() => dispatch(logout())}>Выйти</span>
+          )}
         </div>
       )}
     </div>

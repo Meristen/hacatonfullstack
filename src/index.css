@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 body {
   width: 100%;
@@ -16,7 +17,14 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 70px auto;
+  margin: 0 auto;
   gap: 55px;
-  color: #050574;
+  color: #dedee3;
+  background-color: rgb(42, 49, 49);
+  max-width: 500px;
+  height: 86vh;
+  padding: 20px;
+}
+.formWraper {
+  background-color: #0b0909;
 }
