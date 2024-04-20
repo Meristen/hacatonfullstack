@@ -6,6 +6,8 @@ import { getProfile } from "../../store/users/users.actions";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/users/users.slice";
 import Search from "../search/Search";
+import logo from "../foto/logo (2).png";
+
 const Navbar = () => {
   const dispatch = useDispatch();
   const tokens = JSON.parse(localStorage.getItem("tokens"));
@@ -36,23 +38,31 @@ const Navbar = () => {
   }, []);
   return (
     <div ref={navbarRef} className={styles.container}>
-      <ul className={styles.navs}>
-        <li>
-          <NavLink to={"/"}>
-            <Button style={{ color: "white" }}>главная</Button>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={"/films"}>
-            <Button>фильмы</Button>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={"/serials"}>
-            <Button>сериалы</Button>
-          </NavLink>
-        </li>
-      </ul>
+      <div className={styles.logonav}>
+        <img
+          className={styles.logo}
+          style={{ width: "50px", height: "50px" }}
+          src="https://thumbs.dreamstime.com/b/print-224007432.jpg"
+          alt="logo"
+        />
+        <ul className={styles.navs}>
+          <li>
+            <NavLink to={"/"}>
+              <Button>главная</Button>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/films"}>
+              <Button>фильмы</Button>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/serials"}>
+              <Button>сериалы</Button>
+            </NavLink>
+          </li>
+        </ul>
+      </div>
       <Search />
       <div className={styles.navUser}>
         {currentUser ? (

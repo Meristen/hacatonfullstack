@@ -34,7 +34,7 @@ const Cards = ({ item }) => {
         {item.is_author && (
           <div>
             <Link to={`/edit/${item.id}`}>
-              <Button color={"blue"}>Edit</Button>
+              <Button>Edit</Button>
             </Link>
             <Button
               onClick={() => dispatch(deleteProduct(item.id))}
