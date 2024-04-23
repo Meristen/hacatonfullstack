@@ -31,15 +31,12 @@ const Cards = ({ item }) => {
         <h2>{item.title}</h2>
         <p>{item.author}</p>
 
-        {item.is_author && (
+        {/* {item.is_author && (
           <div>
             <Link to={`/edit/${item.id}`}>
               <Button>Edit</Button>
             </Link>
-            <Button
-              onClick={() => dispatch(deleteProduct(item.id))}
-              color={"red"}
-            >
+            <Button onClick={() => dispatch(deleteProduct(item.id))}>
               Delete
             </Button>
           </div>
@@ -86,7 +83,7 @@ const Cards = ({ item }) => {
               onChange={(e) => setComment(e.target.value)}
             />
           </form>
-        )}
+        )} */}
       </div>
     </div>
   );

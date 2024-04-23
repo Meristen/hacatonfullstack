@@ -44,9 +44,10 @@ import Button from "../../../widgets/buttons/Button";
 import Cards from "../../../widgets/productCard/Cards";
 import styles from "./products.module.css";
 import { useSearchParams } from "react-router-dom";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Sliders from "../../../widgets/slider/Sliders";
+import Poster from "../../../widgets/poster/Poster";
 
 const ProductsList = () => {
   const dispatch = useDispatch();
@@ -63,23 +64,15 @@ const ProductsList = () => {
 
   const { products } = useSelector((state) => state.products);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // количество отображаемых слайдов
-    slidesToScroll: 1,
-  };
-
   return (
     <>
-      <Slider {...settings}>
+      <div className={styles.containerCard}>
         {products?.map((item) => (
           <div key={item.id}>
             <Cards item={item} />
           </div>
         ))}
-      </Slider>
+      </div>
       <div>
         <Button onClick={() => setPage(page - 1)}>Prev</Button>
         <span>{page}</span>

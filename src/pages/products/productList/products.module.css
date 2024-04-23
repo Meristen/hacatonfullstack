@@ -1,4 +1,9 @@
 .containerCard {
+  max-width: 90%;
+  height: 800px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   align-items: center;
+  justify-content: center;
 }

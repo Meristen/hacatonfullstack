@@ -1,11 +1,17 @@
+.contCard {
+  width: 100%;
+}
+
 .card {
-  border: 1px solid black;
-  width: 90%;
-  height: 500px;
+  border: 1px solid rgb(239, 235, 235);
+  width: 400px;
+  height: 400px;
   border-radius: 10px;
   margin-top: 20px;
   padding: 20px;
   background-color: #6a6161;
+  display: flex;
+  flex-direction: column;
 }
 .cardImg {
   max-width: 100%;
