@@ -1,0 +1,22 @@
+.left {
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 100px;
+}
+.right {
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 100px;
+}
