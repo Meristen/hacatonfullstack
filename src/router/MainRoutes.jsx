@@ -7,6 +7,7 @@ import ErrorPage from "../pages/error/ErrorPage";
 import NotFoundPage from "../pages/not-found/NotFoundPage";
 import ProductsList from "../pages/products/productList/ProductsList";
 import EditProduct from "../pages/products/edit/EditProduct";
+import FilmProfile from "../pages/filmProfile/FilmProfile";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: "/login", element: <LoginPage /> },
       { path: "*", element: <NotFoundPage /> },
       { path: "/edit/:id", element: <EditProduct /> },
+      { path: "/film-profile/:id", element: <FilmProfile /> },
     ],
   },
 ]);

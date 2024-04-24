@@ -23,7 +23,7 @@ form {
   color: #dedee3;
   background-color: rgb(42, 49, 49);
   max-width: 500px;
-  height: 86vh;
+  min-height: 86vh;
   padding: 20px;
 }
 .formWraper {

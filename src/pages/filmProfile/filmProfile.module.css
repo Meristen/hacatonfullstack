@@ -1,0 +1,21 @@
+.wrapperProfile {
+  color: aliceblue;
+  display: flex;
+  /* align-items: center; */
+  /* gap: 50px; */
+  flex-wrap: wrap;
+}
+.wrapperProfile img {
+  width: 700px;
+  height: 500px;
+}
+.profileTitle {
+  font-size: 50px;
+  margin-right: 100px;
+}
+.profileCategory {
+  font-size: 30px;
+}
+.profileDesc {
+  font-size: 15px;
+}

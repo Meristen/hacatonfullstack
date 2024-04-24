@@ -86,7 +86,7 @@ const EditProduct = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 style={{ fontSize: "50px", fontFamily: "cursive" }}>EditProduct</h2>
+      <h2 style={{ fontSize: "50px", fontFamily: "cursive" }}>Изменить</h2>
       {error && <h2 style={{ color: "red" }}>{error}!!!</h2>}
       <Input
         onChange={handleChange}
@@ -102,27 +102,27 @@ const EditProduct = () => {
         placeholder="description"
         type="text"
       />
-      <Input
+      {/* <Input
         onChange={handleChange}
         value={product.price}
         name="price"
         placeholder="price"
         type="text"
-      />
-      <select value={product.id} onChange={handleChange} name="category" id="">
+      /> */}
+      {/* <select value={product.id} onChange={handleChange} name="category" id="">
         {categories.map((cat) => (
           <option value={cat.id} key={cat.id}>
             {cat.title}
           </option>
         ))}
-      </select>
+      </select> */}
       <input
         onChange={handleChange}
         name="image"
         accept="image/*"
         type="file"
       />
-      <Button color="green">Add</Button>
+      <Button color="green">изменить</Button>
     </form>
   );
 };
