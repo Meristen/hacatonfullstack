@@ -16,13 +16,13 @@ const Poster = () => {
       <div className={styles.card}>
         <img
           className={styles.posterImg}
-          src="https://img.freepik.com/free-photo/wide-angle-shot-of-a-single-tree-growing-under-a-clouded-sky-during-a-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1713657600&semt=ais"
+          src="https://m.media-amazon.com/images/M/MV5BOGFjYWNkMTMtMTg1ZC00Y2I4LTg0ZTYtN2ZlMzI4MGQwNzg4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg"
           alt="logo"
         />
         <div className={styles.cardContent}>
-          <h2>Title</h2>
-          <p>janr</p>
-          <p>year</p>
+          <h2>годзила</h2>
+          <p>фантастика</p>
+          <p>2019</p>
         </div>
       </div>
       <div className={styles.card}>
@@ -32,9 +32,9 @@ const Poster = () => {
           alt="logo"
         />
         <div className={styles.cardContent}>
-          <h2>Title</h2>
-          <p>janr</p>
-          <p>year</p>
+          <h2>напалеон</h2>
+          <p>исторический</p>
+          <p>2023</p>
         </div>
       </div>
       <div className={styles.card}>
@@ -44,9 +44,9 @@ const Poster = () => {
           alt="logo"
         />
         <div className={styles.cardContent}>
-          <h2>Title</h2>
-          <p>janr</p>
-          <p>year</p>
+          <h2>кунфу панда</h2>
+          <p>мультфильм</p>
+          <p>2021</p>
         </div>
       </div>
       <div className={styles.card}>
@@ -56,9 +56,9 @@ const Poster = () => {
           alt="logo"
         />
         <div className={styles.cardContent}>
-          <h2>Title</h2>
-          <p>janr</p>
-          <p>year</p>
+          <h2>аватар</h2>
+          <p>фантастика</p>
+          <p>2022</p>
         </div>
       </div>
       <div className={styles.card}>
@@ -68,9 +68,9 @@ const Poster = () => {
           alt="logo"
         />
         <div className={styles.cardContent}>
-          <h2>Title</h2>
-          <p>janr</p>
-          <p>year</p>
+          <h2>карты, деньги, два ствола</h2>
+          <p>криминал</p>
+          <p>1998</p>
         </div>
       </div>
       <div className={styles.card}>
