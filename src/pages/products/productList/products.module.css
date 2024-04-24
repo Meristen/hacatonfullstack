@@ -1,11 +1,22 @@
 .containerCard {
-  max-width: 90%;
+
+  max-width: 100%;
+
   min-height: 800px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
+}
+.wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.pagination {
+  margin: 0 auto;
 }
 
 .pagin {
