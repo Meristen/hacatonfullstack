@@ -54,13 +54,13 @@ const EditProduct = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    for (let key in product) {
-      console.log(key);
-      if (key !== "image" && key !== "category" && !product[key].trim()) {
-        alert("some inputs are empty");
-        return;
-      }
-    }
+    // for (let key in product) {
+    //   console.log(key);
+    //   if (key !== "image" && key !== "category" && !product[key].trim()) {
+    //     alert("some inputs are empty");
+    //     return;
+    //   }
+    // }
 
     const formData = new FormData();
     formData.append("title", product.title);
