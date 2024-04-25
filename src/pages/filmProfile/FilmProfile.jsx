@@ -64,35 +64,27 @@ const FilmProfile = () => {
   return (
     <div className={styles.wrapperProfile}>
       <img src={product.image} alt="" />
-       <h2 className={styles.profileTitle}>{product.title}</h2>
-      <h4 className={styles.profileDesc}>{product.description}</h4>
-      {/* {product.is_author && ( */}
-      <div>
-        <Link to={`/edit/${product.id}`}>
-          <Button>Изменить</Button>
-        </Link>
-        <Button onClick={() => onClickDelete()}>Удалить</Button>
-      </div>
-      {/* )} */}
-      <div
-        onClick={() => {
-          dispatch(toggleLike(product.id));
-          setLike(!like);
-        }}
-      >
-        {like ? <FcLike size={25} /> : <FcLikePlaceholder size={25} />}
-      </div>
-      <p>Лайки: {product.likes}</p>
-      <h5>Коментарии:</h5>
-      {/* {product.reviews.map((item) => (
-
+      <div className={styles.profileContent}>
+        <h2 className={styles.profileTitle}>{product.title}</h2>
+        <h4 className={styles.profileDesc}>{product.description}</h4>
+        {/* {product.is_author && ( */}
         <div>
-          <b>{item.author}:</b> <p key={item.id}>{item.text}</p>
-          <Button onClick={() => dispatch(deleteComment(item.id))}>
-            Удалить
-          </Button>
+          <Link to={`/edit/${product.id}`}>
+            <Button>Изменить</Button>
+          </Link>
+          <Button onClick={() => onClickDelete()}>Удалить</Button>
         </div>
-      ))} */}
+        {/* )} */}
+        <div
+          onClick={() => {
+            dispatch(toggleLike(product.id));
+            setLike(!like);
+          }}
+        >
+          {like ? <FcLike size={25} /> : <FcLikePlaceholder size={25} />}
+        </div>
+        <p>Лайки: {product.likes}</p>
+        <h5>Коментарии:</h5>
         <Button onClick={toggle}>коментарий:</Button>
 
         {openInput && (
