@@ -50,38 +50,42 @@ const FilmProfile = () => {
         price: oneProduct.price,
         category: oneProduct.category.id,
         image: oneProduct.image,
+        id: oneProduct.id,
       });
   }, [oneProduct]);
+
+  const onClickDelete = () => {
+    dispatch(deleteProduct(product.id));
+    navigate("/");
+  };
 
   console.log(product);
 
   return (
     <div className={styles.wrapperProfile}>
       <img src={product.image} alt="" />
-      <div className={styles.profileContent}>
-        <h2 className={styles.profileTitle}>{product.title}</h2>
-        <h4 className={styles.profileDesc}>{product.description}</h4>
-        {/* {product.is_author && ( */}
-        <div>
-          <Link to={`/edit/${product.id}`}>
-            <Button>Изменить</Button>
-          </Link>
-          <Button onClick={() => dispatch(deleteProduct(product.id))}>
-            Удалить
-          </Button>
-        </div>
-        {/* )} */}
-        <div
-          onClick={() => {
-            dispatch(toggleLike(product.id));
-            setLike(!like);
-          }}
-        >
-          {like ? <FcLike size={25} /> : <FcLikePlaceholder size={25} />}
-        </div>
-        <p>Лайки: {product.likes}</p>
-        <h5>Коментарии:</h5>
-        {/* {product.reviews.map((item) => (
+       <h2 className={styles.profileTitle}>{product.title}</h2>
+      <h4 className={styles.profileDesc}>{product.description}</h4>
+      {/* {product.is_author && ( */}
+      <div>
+        <Link to={`/edit/${product.id}`}>
+          <Button>Изменить</Button>
+        </Link>
+        <Button onClick={() => onClickDelete()}>Удалить</Button>
+      </div>
+      {/* )} */}
+      <div
+        onClick={() => {
+          dispatch(toggleLike(product.id));
+          setLike(!like);
+        }}
+      >
+        {like ? <FcLike size={25} /> : <FcLikePlaceholder size={25} />}
+      </div>
+      <p>Лайки: {product.likes}</p>
+      <h5>Коментарии:</h5>
+      {/* {product.reviews.map((item) => (
+
         <div>
           <b>{item.author}:</b> <p key={item.id}>{item.text}</p>
           <Button onClick={() => dispatch(deleteComment(item.id))}>

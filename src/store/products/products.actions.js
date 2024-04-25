@@ -46,11 +46,11 @@ export const editProduct = createAsyncThunk(
 
 export const addProduct = createAsyncThunk(
   "products/addProduct",
-  async (product) => {
+  async (product, { dispatch }) => {
     try {
       console.log("adding_console");
       await $axios.post(`${API}/products/`, product);
-      getProducts();
+      dispatch(getProducts());
     } catch (error) {
       console.log(error);
     }

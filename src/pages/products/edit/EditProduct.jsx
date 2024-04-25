@@ -36,7 +36,7 @@ const EditProduct = () => {
       setProduct({
         title: oneProduct.title,
         description: oneProduct.description,
-        price: oneProduct.price,
+        price: Math.ceil(oneProduct.price),
         category: oneProduct.category.id,
       });
   }, [oneProduct]);
@@ -67,7 +67,9 @@ const EditProduct = () => {
     formData.append("description", product.description);
     formData.append("price", product.price);
     formData.append("category", product.category);
-    formData.append("image", product.image);
+    if (product.image) {
+      formData.append("image", product.image);
+    }
 
     dispatch(editProduct({ id, product: formData }));
     setProduct({
@@ -92,23 +94,24 @@ const EditProduct = () => {
         onChange={handleChange}
         value={product.title}
         name="title"
-        placeholder="title"
+        placeholder="Название"
+        type="text"
+      />
+      <Input
+        textarea={true}
+        onChange={handleChange}
+        value={product.description}
+        name="description"
+        placeholder="Описание"
         type="text"
       />
       <Input
         onChange={handleChange}
-        value={product.description}
-        name="description"
-        placeholder="description"
-        type="text"
-      />
-      {/* <Input
-        onChange={handleChange}
         value={product.price}
         name="price"
-        placeholder="price"
+        placeholder="Год"
         type="text"
-      /> */}
+      />
       {/* <select value={product.id} onChange={handleChange} name="category" id="">
         {categories.map((cat) => (
           <option value={cat.id} key={cat.id}>

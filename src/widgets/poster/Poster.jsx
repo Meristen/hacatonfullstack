@@ -80,9 +80,9 @@ const Poster = () => {
           alt="logo"
         />
         <div className={styles.cardContent}>
-          <h2>Title</h2>
-          <p>janr</p>
-          <p>year</p>
+          <h2>Большой куш</h2>
+          <p>Боевик</p>
+          <p>2000</p>
         </div>
       </div>
     </Slider>
