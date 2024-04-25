@@ -50,8 +50,14 @@ const FilmProfile = () => {
         price: oneProduct.price,
         category: oneProduct.category.id,
         image: oneProduct.image,
+        id: oneProduct.id,
       });
   }, [oneProduct]);
+
+  const onClickDelete = () => {
+    dispatch(deleteProduct(product.id));
+    navigate("/");
+  };
 
   console.log(product);
 
@@ -65,9 +71,7 @@ const FilmProfile = () => {
         <Link to={`/edit/${product.id}`}>
           <Button>Изменить</Button>
         </Link>
-        <Button onClick={() => dispatch(deleteProduct(product.id))}>
-          Удалить
-        </Button>
+        <Button onClick={() => onClickDelete()}>Удалить</Button>
       </div>
       {/* )} */}
       <div

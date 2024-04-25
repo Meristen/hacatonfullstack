@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./search.module.css";
 import Input from "../inputs/Input";
 import { useSearchParams } from "react-router-dom";
@@ -9,9 +9,13 @@ const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
+  const mounted = useRef(false);
   useEffect(() => {
-    setSearchParams({ title: value });
-    dispatch(getProducts());
+    if (mounted.current) {
+      setSearchParams({ title: value });
+      dispatch(getProducts());
+    }
+    mounted.current = true;
   }, [value]);
   return (
     // <div>

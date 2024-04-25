@@ -7,12 +7,13 @@ import {
   addProduct,
   getCategories,
 } from "../../../store/products/products.actions";
+import { toggleCategories } from "../../../helpers/functions";
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
     title: "",
     description: "",
-    price: "",
+    // price: "",
     category: "",
     image: null,
   });
@@ -81,6 +82,7 @@ const AddProduct = () => {
           type="text"
         />
         <Input
+          textarea={true}
           onChange={handleChange}
           value={product.description}
           name="description"
@@ -91,11 +93,11 @@ const AddProduct = () => {
           onChange={handleChange}
           value={product.price}
           name="price"
-          placeholder="Категория"
+          placeholder="Год"
           type="text"
         />
         <select onChange={handleChange} name="category" id="">
-          {categories.map((cat) => (
+          {toggleCategories(categories).map((cat) => (
             <option value={cat.id} key={cat.id}>
               {cat.title}
             </option>

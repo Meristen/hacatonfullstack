@@ -9,11 +9,13 @@ const Input = ({
   value,
   placeholder,
   style,
+  textarea,
 }) => {
+  const InputTagName = textarea ? "textarea" : "input";
   return (
     <div className={styles.boxInput}>
       <div className={styles.border}>
-        <input
+        <InputTagName
           style={style}
           placeholder={placeholder}
           value={value}

@@ -12,6 +12,7 @@ import {
   toggleLike,
 } from "../../store/products/products.actions";
 import { Link } from "react-router-dom";
+import { toggleCategory } from "../../helpers/functions";
 
 const Cards = ({ item }) => {
   console.log(item, "item");
@@ -21,7 +22,8 @@ const Cards = ({ item }) => {
         <img className={styles.cardImg} src={item.image} alt="" />
         <div className={styles.cardContent}>
           <h2>{item.title}</h2>
-          <p>{item.author}</p>
+          <p>{toggleCategory(item.category).title}</p>
+          <p>{Math.ceil(item.price)}</p>
         </div>
       </div>
     </div>
